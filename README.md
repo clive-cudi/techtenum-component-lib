@@ -1,5 +1,52 @@
 # Techtenum component Library
 
+
+## Installation.
+
+`npm i techtenum-component-lib`
+
+Installs the library and necessary dependencies to the project
+
+**To use the components, import them from the library**:
+
+```js
+import { Button } from 'techtenum-component-lib';
+
+export const MyComponent = ({message}) => {
+    return (
+        <div>
+            <Button label={message} styling={{color: "crimson",height: "auto"}} />
+            // the styling prop is optional
+        </div>
+    )
+}
+```
+
+## Commands
+
+`npm install`
+
+This installs the library dependencies as per the package.json file
+
+`npm run storybook`
+
+Runs the storybook server and opens the storybook on localhost:6006
+
+`npm run compile`
+
+Does a clean install, removes the current ./dist output folder, compiles the library using babel then spits the results in a ./dist folder in the root directory at the topmost level.
+
+```json
+{
+    "clean": "rimraf dist",
+    "compile": "npm run clean && tsc || echo 'tsc' && cross-env NODE_ENV=production babel src/ --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
+}
+```
+
+`npm publish`
+
+Publishes to npm. Ready for installation and use ;)
+
 ## Folder Structure
 
 The ./src folder contains all the source code to the library.
@@ -24,6 +71,8 @@ React Components for the library are found in ./src/components
 `Remember to export the contexts, hooks, providers from the respective root folder index.js, then export from the main root folder [main entry point] index.js`
 
 ## WorkFlow
+
+## --** Adding Components **--
 
 For a button component,
 
@@ -125,53 +174,7 @@ Then in the main entry point ./src/index.js under the //components comment expor
 export { Button } from './components';
 ```
 
-## Commands
-
-`npm install`
-
-This installs the library dependencies as per the package.json file
-
-`npm run storybook`
-
-Runs the storybook server and opens the storybook on localhost:6006
-
-`npm run compile`
-
-Does a clean install, removes the current ./dist output folder, runs the typescript compiler to generate [filename].d.ts files then compiles the library using babel then spits the results in a ./dist folder in the root directory at the topmost level.
-
-This should be run after the components are ready to use in external projects
-
-```json
-{
-    "clean": "rimraf dist",
-    "compile": "npm run clean && tsc || echo 'tsc' && cross-env NODE_ENV=production babel src/ --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
-}
-```
-
-`npm publish`
-
-Publishes to npm as a node package so that the library can be installed and used in external projects.
-
 
 ## Conclusion
 
-The component library is now ready to be installed and used in other projects.
-
-`npm i techtenum-component-lib`
-
-Installs the library and necessary dependencies to the project
-
-**To use the components, import them from the library**:
-
-```js
-import { Button } from 'techtenum-component-lib';
-
-export const MyComponent = ({message}) => {
-    return (
-        <div>
-            <Button label={message} styling={{color: "crimson",height: "auto"}} />
-            // the styling prop is optional
-        </div>
-    )
-}
-```
+Good Luck *** work in progress ***
