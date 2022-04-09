@@ -1,0 +1,86 @@
+.pc_wrapper {
+    display: flex;
+    height: 500px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+.pc_filter {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.405);
+    border-radius: 10px;
+    position: absolute;
+}
+.pc_image {
+    display: flex;
+    height: 40%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.pc_image > img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.pc_info {
+    display: flex;
+    height: 60%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.pc_info > span {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    align-items: center;
+}
+.pc_vid_ctrls {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.pc_vid_ctrls > button {
+    display: flex;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.4s;
+}
+.pc_vid_ctrls > span {
+    margin-top: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.pc_vid_ctrls > button:hover {
+    cursor: pointer;
+    color: white;
+    background: #2563EB;
+}
+.pc_info > button {
+    width: 100%;
+}

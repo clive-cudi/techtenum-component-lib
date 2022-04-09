@@ -1,0 +1,25 @@
+.tb_main_wrapper {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.tb_main_wrapper > * {
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-duration: 0.6s;
+}
+.tb_main_wrapper > table {
+    height: fit-content;
+    width: 100%;
+}
+.tb_main_wrapper > table > thead > tr {
+    height: 40px;
+}
+.tb_main_wrapper > table > tbody > tr {
+    height: 40px;
+}
+.tb_main_wrapper > table > thead > tr > th {
+    color: white;
+    background: #1e293b;
+}

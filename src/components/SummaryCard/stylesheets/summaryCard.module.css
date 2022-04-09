@@ -1,0 +1,50 @@
+.sc_wrapper {
+    display: flex;
+    height: 150px;
+    width: 280px;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+.sc_wrapper > h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+}
+.sc_wrapper > h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+.sc_wrapper > button {
+    height: 34px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background: white;
+}
+.sc_wrapper > span {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.sc_wrapper > span > h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+}
+.sc_wrapper > span > h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+.sc_wrapper > button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 6px 1px rgb(61, 61, 61);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.4s;
+}

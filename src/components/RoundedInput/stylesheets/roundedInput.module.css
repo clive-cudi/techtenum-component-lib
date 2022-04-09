@@ -1,0 +1,43 @@
+.ri_wrapper {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 400px;
+    background: none;
+    border: 0.5px solid #C4C4C4;
+    border-radius: 10px;
+}
+.ri_wrapper > input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 4px;
+    background: none;
+}
+.ri_wrapper > span {
+    color: gray;
+}
+.ri_wrapper > input:focus {
+    outline: none;
+}
+.ri_wrapper:hover{
+    cursor: pointer;
+    border: 0.5px solid white;
+}
+.ri_wrapper:focus {
+    border-bottom: 0.5px solid black;
+}
+.ri_wrapper > span {
+    display: flex;
+    height: 100%;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin: 6px;
+}
+.ri_wrapper:hover > span {
+    color: black;
+}

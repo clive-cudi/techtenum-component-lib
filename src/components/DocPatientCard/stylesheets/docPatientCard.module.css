@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+.dpc_wrapper {
+    display: flex;
+    height: 278px;
+    width: 280px;
+    padding: 10px;
+    flex-direction: column;
+    box-shadow: 1px 1px 4px 2px rgb(170, 170, 170);
+    justify-content: space-between;
+    border-radius: 10px;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.4s;
+}
+.dpc_profile_wrapper {
+    display: flex;
+    height: 140px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.dpc_profile {
+    display: flex;
+    height: 136px;
+    width: 136px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 0.5px solid gray;
+    padding: 1px;
+}
+.dpc_profile > img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.dpc_deets {
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.dpc_deets > h2 {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+.dpc_deets > h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #7B7B7B;
+}
+.dpc_btns {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.dpc_btns > button {
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background: white;
+    padding: 10px;
+}
+.dpc_btns > button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 6px 2px rgb(170, 170, 170);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.4s;
+}
+.dpc_wrapper:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08),
+      0px 6px 24px 1px rgba(0, 0, 0, 0.05);
+}
