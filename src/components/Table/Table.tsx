@@ -3,13 +3,41 @@ import styles from "./stylesheets/table.module.css";
 import { arrayOf, string, bool, elementType, number, object, any, oneOfType } from "prop-types";
 import { TableRow } from "..";
 
-// tableConfigCols sets up the configuration of the table as in the number of columns and their names to be used in the table
+interface TableTypes {
+  tableConfigCols: [string]
+  tableData: [[string]]
+  isCollapsible: boolean
+  collapseComponent: JSX.Element | React.ReactNode
+  collapseHeight: string | number
+  styling?: React.CSSProperties
+  tableStyling?: React.CSSProperties
+  tableArgs?: React.HTMLAttributes<HTMLTableElement>
+}
 
-// tableData defines the data in the rows
 
-// data to be inserted in Csv Like format
+/**
+ * 
+ * @description 
+ * @param tableConfigCols sets up the configuration of the table as in the number of columns and their names to be used in the table
+   TableData defines the data in the rows
+   Data to be inserted in Csv Like format 
+   title columns: 
+ * @example const tableConfigCols = ["s/n", "Learner", "Date done", "Points", "Percentage"] 
+ * @example export const Table_data = [
+ *             ["1", "James Muhoro", "13-02-2-2021", "12/20", "60%"],
+ *             ["2", "Edna Kagendo", "22-01-2021", "18/20", "90%"],
+ *             ["3", "James Muhoro", "13-02-2-2021", "12/20", "60%"],
+ *             ["4", "Edna Kagendo", "22-01-2021", "18/20", "90%"],
+ *             ["5", "James Muhoro", "13-02-2-2021", "12/20", "60%"],
+ *             ["6", "Edna Kagendo", "22-01-2021", "18/20", "90%"],
+ *             ["7", "James Muhoro", "13-02-2-2021", "12/20", "60%"],
+ *             ["8", "Edna Kagendo", "22-01-2021", "18/20", "90%"],
+ *           ];
+ * @returns JSX.Element
+ */
 
-export const Table = ({ tableConfigCols, tableData, isCollapsible, collapseComponent, collapseHeight, styling, tableStyling, tableArgs }) => {
+
+export const Table = ({ tableConfigCols, tableData, isCollapsible, collapseComponent, collapseHeight, styling, tableStyling, tableArgs }: TableTypes): JSX.Element  => {
   return (
     <div className={styles.tb_main_wrapper} style={{...styling}}>
       <table cellSpacing={0} style={{...tableStyling}} {...tableArgs}>

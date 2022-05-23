@@ -3,7 +3,17 @@ import styles from './stylesheets/docPatientCard.module.css';
 import { string, func, oneOf, object } from 'prop-types';
 import { useTheme } from '../..';
 
-export const DocPatientCard = ({type, name, title, profilePic, detailsOnClick, removeOnClick, styling}) =>{
+interface DocPatientCardProps {
+    type?: "Doctor" | "Hospital"
+    name: string
+    title: string
+    profilePic?: string
+    detailsOnClick: (e: React.MouseEvent<HTMLButtonElement>)=>{}
+    removeOnClick: (e: React.MouseEvent<HTMLButtonElement>)=>{}
+    styling: React.CSSProperties
+}
+
+export const DocPatientCard = ({type, name, title, profilePic, detailsOnClick, removeOnClick, styling}: DocPatientCardProps): JSX.Element =>{
     const theme = useTheme();
     return (
         <div className={styles.dpc_wrapper} style={{...theme.themeStyles, ...styling}}>

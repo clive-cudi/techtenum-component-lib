@@ -7,7 +7,20 @@ import { EpisodeDropDown } from '..';
 import { useTheme } from '../..';
 import { array, string, bool, object, number, oneOfType } from 'prop-types';
 
-export const SeriesDropDown = ({episodeData, title, total_time, expanded, styling})=>{
+type Episode = {
+    title: string
+    time: string
+}
+
+interface SeriesDropDownTypes {
+    episodeData: [Episode]
+    title: string
+    total_time: string | number
+    expanded: boolean
+    styling?: React.CSSProperties
+}
+
+export const SeriesDropDown = ({episodeData, title, total_time, expanded, styling}: SeriesDropDownTypes): JSX.Element=>{
     const [expandedStatus, setExpandedStatus] = useState(expanded);
     const theme = useTheme();
 

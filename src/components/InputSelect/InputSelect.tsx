@@ -5,8 +5,22 @@ import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { useTheme } from '../..';
 
 // Add icons to each item in list
+type option = {
+    label: string
+    value: string
+    icon: string
+}
 
-export const InputSelect = ({options, defaultOption, onValue, styling,optionDropDownStyling, hasIcons, ...args})=>{
+interface InputSelectProps {
+    options: [option]
+    defaultOption: option
+    onValue: (e: string)=>{}
+    styling?: React.CSSProperties
+    optionDropDownStyling?: React.CSSProperties
+    hasIcons?: boolean
+}
+
+export const InputSelect = ({options, defaultOption, onValue, styling, optionDropDownStyling, hasIcons, ...args}: InputSelectProps): JSX.Element=>{
     const [value, setValue] = useState("");
     const [isOpen, setIsOpen] = useState(false);
     const theme = useTheme();
@@ -24,7 +38,7 @@ export const InputSelect = ({options, defaultOption, onValue, styling,optionDrop
             <span className={styles.abstraction_wrapper}>
                 <button onClick={()=>{toggleDropDown()}}>{isOpen == true ? <BsChevronUp /> : <BsChevronDown />}</button>
             </span>
-            <select style={{color: theme?.themeStyles?.color ? theme.themeStyles.color : 'white'}} value={value !== "" ? value : defaultOption} autoComplete={true}>
+            <select style={{color: theme?.themeStyles?.color ? theme.themeStyles.color : 'white'}} value={value !== "" ? value : defaultOption.value} autoComplete={`true`}>
                 <option value={defaultOption?.value}>{defaultOption?.label}</option>
                 {
                     options.map((option)=>{

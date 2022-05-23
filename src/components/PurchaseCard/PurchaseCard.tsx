@@ -7,7 +7,16 @@ import { bool, string, number, oneOfType } from 'prop-types';
 import styles from './stylesheets/purchaseCard.module.css';
 import { useTheme } from '../..';
 
-export const PurchaseCard = ({type, price, noOfModules, hours, certificate, img}) =>{
+interface PurchaseCard {
+    type: "path" | "module"
+    price: string | number
+    noOfModules: string | number
+    hours: string | number
+    certificate: boolean
+    img: string
+}
+
+export const PurchaseCard = ({type, price, noOfModules, hours, certificate, img}: PurchaseCard): JSX.Element =>{
     const theme = useTheme();
     return (
         <div className={styles.pc_wrapper} style={{...theme.themeStyles}}>

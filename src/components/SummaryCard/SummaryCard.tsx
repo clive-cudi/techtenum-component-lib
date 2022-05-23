@@ -2,7 +2,18 @@ import React from "react";
 import styles from "./stylesheets/summaryCard.module.css";
 import { string, number, object, bool, func, oneOfType } from "prop-types";
 
-export const SummaryCard = ({number, label, background, text_color, styling, graphTrigger, graphTriggerOnClick, units}) => {
+interface SummaryCardTypes {
+  number?: string | number
+  label?: string
+  background?: string
+  text_color?: string
+  styling?: React.CSSProperties
+  graphTrigger?: boolean
+  graphTriggerOnClick?: ()=>{}
+  units?: string
+}
+
+export const SummaryCard = ({number, label, background, text_color, styling, graphTrigger, graphTriggerOnClick, units}: SummaryCardTypes): JSX.Element => {
   return (
     <div
       className={styles.sc_wrapper}
@@ -29,7 +40,9 @@ export const SummaryCard = ({number, label, background, text_color, styling, gra
       {graphTrigger && (
         <button
           onClick={() => {
-            graphTriggerOnClick();
+            if (graphTriggerOnClick){
+              graphTriggerOnClick();
+            }
           }}
         >
           View Graph

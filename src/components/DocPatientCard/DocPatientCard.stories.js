@@ -7,7 +7,7 @@ export default {
     args: {}
 }
 
-const Template = (args) => <DocPatientCard {...args} />
+const Template = (args) => <DocPatientCard {...args} styling={{}}/>
 
 export const Doctor = Template.bind({});
 

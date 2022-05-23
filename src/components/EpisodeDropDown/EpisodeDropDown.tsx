@@ -4,7 +4,13 @@ import styles from './stylesheets/episodeDropdown.module.css';
 import { useTheme } from '../..';
 import { number, string, oneOfType } from 'prop-types';
 
-export const EpisodeDropDown = ({title, time, styling}) =>{
+interface EpisodeDropDownTypes {
+    title: string,
+    time?: string
+    styling?: React.CSSProperties
+}
+
+export const EpisodeDropDown = ({title, time, styling}: EpisodeDropDownTypes) =>{
     const theme = useTheme();
     return (
         <div className={styles.ed_wrapper} style={{...theme.themeStyles, ...styling}}>

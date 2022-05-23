@@ -6,7 +6,15 @@ import styles from "./stylesheets/tableRow.module.css";
 import { LearnerInfo } from "../..";
 import { GrClose } from 'react-icons/gr';
 
-export const TableRow = ({ td_row, isCollapsible, index, collapseHeight, collapseComponent }) => {
+interface TableRowTypes {
+  td_row: [string]
+  isCollapsible?: boolean
+  index: number
+  collapseHeight?: number | string
+  collapseComponent?: JSX.Element | React.ReactNode
+}
+
+export const TableRow = ({ td_row, isCollapsible, index, collapseHeight, collapseComponent }: TableRowTypes): JSX.Element => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   function toggleCollapse() {

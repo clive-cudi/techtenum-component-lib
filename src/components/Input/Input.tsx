@@ -3,7 +3,14 @@ import {string, any} from 'prop-types';
 import styles from './stylesheets/input.module.css';
 import { useTheme } from "../../hooks";
 
-export const Input = ({type, placeholder, styling, onChange, ...other}) => {
+interface InputProps {
+    type: React.HTMLInputTypeAttribute,
+    placeholder?: string
+    styling?: React.CSSProperties
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => {}
+}
+
+export const Input = ({type, placeholder, styling, onChange, ...other}: InputProps): JSX.Element => {
     const theme = useTheme();
     return (
         <input className={`${styles.input}`} type={type} placeholder={placeholder} style={{...styling}} onChange={(e)=>{
