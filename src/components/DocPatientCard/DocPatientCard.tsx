@@ -13,10 +13,10 @@ interface DocPatientCardProps {
     styling: React.CSSProperties
 }
 
-export const DocPatientCard = ({type, name, title, profilePic, detailsOnClick, removeOnClick, styling}: DocPatientCardProps): JSX.Element =>{
+export const DocPatientCard = ({name, title, profilePic, detailsOnClick, removeOnClick, styling}: DocPatientCardProps): JSX.Element =>{
     const theme = useTheme();
     return (
-        <div className={styles.dpc_wrapper} style={{...theme.themeStyles, ...styling}}>
+        <div className={styles.dpc_wrapper} style={{...theme?.themeStyles, ...styling}}>
             <div className={styles.dpc_profile_wrapper}>
                 <div className={styles.dpc_profile}>
                     <img src={profilePic} alt={`@${name}`} />

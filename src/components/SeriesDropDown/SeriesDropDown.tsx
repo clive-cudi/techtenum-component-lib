@@ -34,10 +34,10 @@ export const SeriesDropDown = ({episodeData, title, total_time, expanded, stylin
 
 
     return (
-        <div className={styles.sd_wrapper} style={{...theme.themeStyles, ...styling}}>
+        <div className={styles.sd_wrapper} style={{...theme?.themeStyles, ...styling}}>
             <div className={styles.sd_content}>
                 <div className={styles.sd_header} onClick={()=>{toggleExp()}}>
-                    <span style={{background: theme.title === "Dark" ? "#322b76" : ""}}></span>
+                    <span style={{background: theme?.title === "Dark" ? "#322b76" : ""}}></span>
                     <div className={styles.sd_title}>
                         <h2>{title}</h2>
                     </div>

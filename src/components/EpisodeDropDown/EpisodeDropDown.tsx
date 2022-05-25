@@ -13,7 +13,7 @@ interface EpisodeDropDownTypes {
 export const EpisodeDropDown = ({title, time, styling}: EpisodeDropDownTypes) =>{
     const theme = useTheme();
     return (
-        <div className={styles.ed_wrapper} style={{...theme.themeStyles, ...styling}}>
+        <div className={styles.ed_wrapper} style={{...theme?.themeStyles, ...styling}}>
         <div className={styles.ed_title}>
             <div className={styles.ed_play}>
                 <AiOutlinePlayCircle fontSize={20} style={{marginRight: "10px"}} />

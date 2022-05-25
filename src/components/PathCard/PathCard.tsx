@@ -20,10 +20,10 @@ interface PathCardTypes {
   styling?: React.CSSProperties
 }
 
-export const PathCard = ({type, title, link, poster, instructor, isInProgress, percentage_complete, no_modules, no_series, hours, styling}: PathCardTypes): JSX.Element => {
+export const PathCard = ({type, title, link, poster, instructor, isInProgress, percentage_complete, no_series, hours, styling}: PathCardTypes): JSX.Element => {
     const theme = useTheme();
 
-    function tagColor(tag_type: string) {
+    function tagColor(tag_type: string): string {
         switch (tag_type){
             case 'path':
                 return `#BF37FF`
@@ -35,7 +35,7 @@ export const PathCard = ({type, title, link, poster, instructor, isInProgress, p
     }
 
   return (
-    <div className={styles.card_wrapper} style={{...theme.themeStyles, ...styling}}>
+    <div className={styles.card_wrapper} style={{...theme?.themeStyles, ...styling}}>
       <div className={styles.card_img}>
         {poster && (
           <img src={poster} alt={`${title}...image`} />

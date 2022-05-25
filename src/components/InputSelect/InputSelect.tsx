@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import styles from './stylesheets/inputSelect.module.css';
-import { Input } from '..';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { useTheme } from '../..';
 

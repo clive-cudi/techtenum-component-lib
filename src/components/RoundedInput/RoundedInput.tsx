@@ -45,12 +45,12 @@ export const RoundedInput = ({type, placeholder, icon, styling, validateInput, r
 
     return (
         <div style={{...styling}} {...other} className={`${styles.ri_wrapper}`}>
-            <span style={{color: theme.themeStyles.color}}>{icon}</span>
+            <span style={{color: theme?.themeStyles.color}}>{icon}</span>
             <Input type={type} placeholder={placeholder} onChange={(e: React.ChangeEvent<HTMLInputElement>): React.ChangeEvent<HTMLInputElement>=>{
                 onChange(e);
                 setInput(e.target.value);
                 return e;
-            }} styling={{color: theme.themeStyles.color}} />
+            }} styling={{color: theme?.themeStyles.color}} />
             {
                 input !== '' && validateInput && (isValid ? <AiOutlineCheck color="chartreuse" /> : <FcHighPriority />)
             }

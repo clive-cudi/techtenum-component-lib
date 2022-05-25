@@ -3,7 +3,6 @@ import { bool, arrayOf, number, elementType, element, string } from "prop-types"
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import styles from "./stylesheets/tableRow.module.css";
-import { LearnerInfo } from "../..";
 import { GrClose } from 'react-icons/gr';
 
 interface TableRowTypes {

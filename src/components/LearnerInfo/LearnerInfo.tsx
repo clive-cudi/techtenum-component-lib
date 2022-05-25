@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './stylesheets/learnerInfo.module.css';
 import { string, arrayOf, object } from 'prop-types';
 
@@ -10,7 +9,7 @@ interface LearnerInfoTypes {
     assessmentSubmissions?: string
 }
 
-export const LearnerInfo = ({username, profilePic, about, progressReport, assessmentSubmissions}: LearnerInfoTypes): JSX.Element => {
+export const LearnerInfo = ({username}: LearnerInfoTypes): JSX.Element => {
     return (
         <div className={styles.ln_wrapper}>
             <h2>{username}</h2>
@@ -18,19 +17,19 @@ export const LearnerInfo = ({username, profilePic, about, progressReport, assess
     )
 }
 
-const progressReportDataStruture = [
-    {
-        progressTitle: '',
-        percentageDone: ''
-    }
-]
+// const progressReportDataStruture = [
+//     {
+//         progressTitle: '',
+//         percentageDone: ''
+//     }
+// ]
 
-const assessmentSubmissionDataStruture = [
-    {
-        assessmentTitle: '',
-        percentageDone: ''
-    }
-]
+// const assessmentSubmissionDataStruture = [
+//     {
+//         assessmentTitle: '',
+//         percentageDone: ''
+//     }
+// ]
 
 LearnerInfo.propTypes = {
     username: string,
