@@ -1,9 +1,9 @@
-import React, {useContext} from 'react';
+import {useContext} from 'react';
 import { ThemeCtx } from '../../contexts';
-import { Themes } from '../../utils';
+import { themeTypes } from '../../utils';
 
 // hook returns the value of the context themeCtx
-export const useTheme = () =>{
+export const useTheme = (): themeTypes | null =>{
     // const [theme, setTheme] = useContext(ThemeCtx);
     const theme = useContext(ThemeCtx);
 

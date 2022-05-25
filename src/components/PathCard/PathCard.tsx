@@ -6,10 +6,24 @@ import styles from './stylesheets/pathCard.module.css';
 import { useTheme } from "../..";
 import {string, bool, number} from 'prop-types';
 
-export const PathCard = ({type, title, link, poster, instructor, isInProgress, percentage_complete, no_modules, no_series, hours, styling}) => {
+interface PathCardTypes {
+  type: "module" | "path"
+  title?: string
+  link?: string
+  poster?: string
+  instructor?: string
+  isInProgress?: boolean
+  percentage_complete?: string | number
+  no_modules?: string | number
+  no_series?: string | number
+  hours?: string | number
+  styling?: React.CSSProperties
+}
+
+export const PathCard = ({type, title, link, poster, instructor, isInProgress, percentage_complete, no_series, hours, styling}: PathCardTypes): JSX.Element => {
     const theme = useTheme();
 
-    function tagColor(tag_type) {
+    function tagColor(tag_type: string): string {
         switch (tag_type){
             case 'path':
                 return `#BF37FF`
@@ -21,7 +35,7 @@ export const PathCard = ({type, title, link, poster, instructor, isInProgress, p
     }
 
   return (
-    <div className={styles.card_wrapper} style={{...theme.themeStyles, ...styling}}>
+    <div className={styles.card_wrapper} style={{...theme?.themeStyles, ...styling}}>
       <div className={styles.card_img}>
         {poster && (
           <img src={poster} alt={`${title}...image`} />

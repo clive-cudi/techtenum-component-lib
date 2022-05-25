@@ -1,8 +1,10 @@
 {
   "name": "techtenum-component-lib",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "private": false,
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
   "files": [
     "dist",
     "README.md"
@@ -12,9 +14,12 @@
     "url": "https://github.com/clive-cudi/techtenum-component-lib.git"
   },
   "dependencies": {
+    "@types/jest": "^27.5.1",
+    "@types/node": "^17.0.35",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
     "prop-types": "^15.8.1",
     "react-icons": "^4.3.1",
-    "styled-components": "^5.3.3",
     "web-vitals": "^2.1.3"
   },
   "peerDependencies": {
@@ -23,17 +28,21 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0"
+    "react-scripts": "5.0.0",
+    "styled-components": "^5.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build:react": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "clean": "rimraf dist",
-    "compile": "npm run clean && tsc || echo 'tsc' && cross-env NODE_ENV=production babel src/ --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
+    "compile": "npm run clean && tsc || echo 'tsc' && cross-env NODE_ENV=production babel src/ --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__",
+    "prepack": "yarn build",
+    "build": "npm run clean && tsc || echo 'tsc' && cross-env NODE_ENV=production && rollup -c",
+    "watch": "rollup -cw"
   },
   "eslintConfig": {
     "extends": [
@@ -67,6 +76,8 @@
     "@babel/cli": "^7.16.8",
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "@storybook/addon-actions": "^6.4.12",
     "@storybook/addon-essentials": "^6.4.12",
     "@storybook/addon-links": "^6.4.12",
@@ -76,7 +87,12 @@
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/react": "^6.4.12",
     "cross-env": "^7.0.3",
-    "typescript": "^4.5.4",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.14",
+    "rollup": "^2.74.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "typescript": "^4.7.2",
     "webpack": "^5.66.0"
   }
 }

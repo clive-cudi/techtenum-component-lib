@@ -1,4 +1,12 @@
-export const Themes = [
+export interface themeTypes {
+    title: string
+    themeStyles: {
+        color: string
+        background: string
+    }
+}
+
+export const Themes: themeTypes[] = [
     {
         title: 'Dark',
         themeStyles: {
