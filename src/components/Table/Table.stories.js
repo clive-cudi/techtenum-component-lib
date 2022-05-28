@@ -17,5 +17,5 @@ Default.args = {
     tableData: Table_data_structure,
     isCollapsible: true,
     collapseHeight: '700px',
-    collapseComponent: <button>Collapsed</button>
+    collapseComponent: <button>Collapsed</button>,
 }
