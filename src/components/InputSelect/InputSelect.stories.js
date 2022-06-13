@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputSelect } from '..';
+import { InputSelect } from './InputSelect';
 
 export default {
     title: 'Components/InputSelect',

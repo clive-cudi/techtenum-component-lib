@@ -18,6 +18,7 @@ export { TableRow } from './components';
 export { LearnerInfo } from './components';
 export { RoundedInput } from './components';
 export { InputSelect } from './components';
+export { PasswordInput } from './components';
 
 // Hooks
 export { useTheme } from './hooks'

@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "..";
+import { Input } from "./Input";
 
 export default {
     title: 'Components/Input',

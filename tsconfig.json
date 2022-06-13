@@ -17,6 +17,6 @@
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*.ts*"],
+  "include": ["src/**/*.ts*", "src/components/Table/TableRow/TableRow.stories.js"],
   "exclude": ["node_modules", "lib", "dist", "integration"]
 }

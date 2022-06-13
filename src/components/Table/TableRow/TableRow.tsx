@@ -26,7 +26,7 @@ export const TableRow = ({ td_row, isCollapsible, index, collapseHeight, collaps
   }
   return (
       <tr className={styles.tbr_main_wrapper} style={{ position: "relative", height: isCollapsed == true ? (collapseHeight ? collapseHeight : `400px`) : `50px`, background: index % 2 !== 0 ? `#e6e6e6` : `white` }}>
-        {td_row.map((rowData, index) => {
+        {td_row?.map((rowData, index) => {
           return <td key={index} style={{textAlign: 'center'}} className={`${index == 0 && styles.first_row}`}>
             <span className={`${styles.desc_text} ${index == 1 && styles.second_row}`}>{tableConfigCols[index]}:</span>
             <span className={`${index == 1 && styles.second_row_data}`}>{rowData}</span>

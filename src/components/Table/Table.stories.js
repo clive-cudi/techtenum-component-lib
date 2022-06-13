@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from '..';
+import { Table } from './Table';
 import { Table_data_structure, TableConfigCols_data_structure } from './Table';
 
 export default {

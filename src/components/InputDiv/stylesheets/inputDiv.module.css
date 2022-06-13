@@ -40,3 +40,6 @@
 .input_div_wrapper:hover > span {
     color: black;
 }
+.input_div_wrapper:last-child:hover {
+    cursor: pointer;
+}

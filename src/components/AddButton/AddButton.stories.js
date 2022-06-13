@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddButton } from '..';
+import { AddButton } from './AddButton';
 
 export default {
     title: 'Components/AddButton',

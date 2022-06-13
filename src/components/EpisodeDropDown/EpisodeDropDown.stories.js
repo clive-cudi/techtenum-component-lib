@@ -1,5 +1,5 @@
 import React from 'react';
-import { EpisodeDropDown } from '..';
+import { EpisodeDropDown } from './EpisodeDropDown';
 
 export default {
     title: 'Components/EpisodeDropDown',

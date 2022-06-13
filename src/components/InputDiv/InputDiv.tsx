@@ -6,7 +6,7 @@ import { AiOutlineCheck } from "react-icons/ai";
 import { FcHighPriority } from "react-icons/fc";
 import { useTheme } from "../../hooks";
 
-interface InputDivProps {
+export interface InputDivProps {
     type: React.HTMLInputTypeAttribute
     placeholder?: string
     icon?: JSX.Element | React.ReactNode
@@ -15,9 +15,11 @@ interface InputDivProps {
     regex?: RegExp
     onChange: (e: React.ChangeEvent<HTMLInputElement>)=>{}
     checkLength?: number
+    endIconReplacement?: JSX.Element | React.ReactNode
+    inputArgs?: {}
 }
 
-export const InputDiv = ({type, placeholder, icon, styling, validateInput, regex, onChange, checkLength, ...other}: InputDivProps) => {
+export const InputDiv = ({type, placeholder, icon, styling, validateInput, regex, onChange, checkLength, endIconReplacement, inputArgs, ...other}: InputDivProps) => {
     const [input, setInput] = useState('');
     const [isValid, setValid] = useState(false);
     const theme = useTheme();
@@ -53,6 +55,9 @@ export const InputDiv = ({type, placeholder, icon, styling, validateInput, regex
             }} styling={{color: theme?.themeStyles.color}} />
             {
                 input !== '' && validateInput && (isValid ? <AiOutlineCheck color="chartreuse" /> : <FcHighPriority />)
+            }
+            {
+                validateInput == false && endIconReplacement
             }
         </div>
     )

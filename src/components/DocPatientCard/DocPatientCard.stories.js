@@ -1,5 +1,5 @@
 import React from 'react';
-import { DocPatientCard } from '..';
+import { DocPatientCard } from './DocPatientCard';
 
 export default {
     title: 'Components/DocPatientCard',

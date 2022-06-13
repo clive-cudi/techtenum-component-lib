@@ -1,5 +1,5 @@
 import React from 'react';
-import { LearnerInfo } from '..';
+import { LearnerInfo } from './LearnerInfo';
 
 export default {
     title: 'Components/LearnerInfo',
