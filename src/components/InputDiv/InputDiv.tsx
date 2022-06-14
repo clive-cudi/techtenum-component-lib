@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import {string, any, bool, func, number, element, object} from 'prop-types';
 import styles from './stylesheets/inputDiv.module.css';
-import { Input } from "../Input/Input";
+import { Input } from "..";
 import { AiOutlineCheck } from "react-icons/ai";
 import { FcHighPriority } from "react-icons/fc";
-import { useTheme } from "../../hooks";
+import { useTheme } from "../..";
 
 export interface InputDivProps {
     type: React.HTMLInputTypeAttribute

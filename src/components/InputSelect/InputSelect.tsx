@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './stylesheets/inputSelect.module.css';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-import { useTheme } from '../../hooks';
+import { useTheme } from '../..';
 
 // Add icons to each item in list
 type option = {

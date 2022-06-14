@@ -3,8 +3,8 @@ import { useState } from 'react';
 import styles from './stylesheets/seriesDropDown.module.css';
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi';
 import { BsDot } from 'react-icons/bs';
-import { EpisodeDropDown } from '../EpisodeDropDown/EpisodeDropDown';
-import { useTheme } from '../../hooks';
+import { EpisodeDropDown } from '..';
+import { useTheme } from '../..';
 import { array, string, bool, object, number, oneOfType } from 'prop-types';
 
 type Episode = {
