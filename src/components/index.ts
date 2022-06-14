@@ -16,3 +16,4 @@ export { LearnerInfo } from './LearnerInfo/LearnerInfo';
 export { TableRow } from './Table/TableRow/TableRow';
 export { RoundedInput } from './RoundedInput/RoundedInput';
 export { InputSelect } from './InputSelect/InputSelect';
+export { PasswordInput } from './PasswordInput/PasswordInput';

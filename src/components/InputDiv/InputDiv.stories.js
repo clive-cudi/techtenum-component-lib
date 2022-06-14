@@ -1,5 +1,5 @@
 import React from "react";
-import { InputDiv } from "..";
+import { InputDiv } from "./InputDiv";
 import { MdOutlineEmail} from 'react-icons/md';
 import { BsKey } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
@@ -24,7 +24,7 @@ export const Password = Template.bind({});
 export const Otp = Template.bind({});
 
 Email.args = {
-    type: "Email",
+    type: "email",
     placeholder: "Enter Email",
     icon: <MdOutlineEmail />,
     validateInput: true,
@@ -34,7 +34,7 @@ Email.args = {
 }
 
 Password.args = {
-    type: "Password",
+    type: "password",
     placeholder: "Enter Password",
     icon: <BsKey />,
     validateInput: true,
@@ -44,8 +44,8 @@ Password.args = {
 }
 
 Otp.args = {
-    type: "telephone",
-    placeholder: "Enter Your Phone Number (+254...)",
+    type: "tel",
+    placeholder: "Enter Your Phone Number",
     icon: <AiOutlineUser />,
     validateInput: false,
     onChange: ()=>{},

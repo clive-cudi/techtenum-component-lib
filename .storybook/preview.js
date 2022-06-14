@@ -14,8 +14,6 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeCtxProvider value={Themes[1]}>
       <Story />
-    </ThemeCtxProvider>
   )
 ]

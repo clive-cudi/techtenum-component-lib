@@ -1,5 +1,5 @@
 import React from 'react';
-import { PathCard } from '..';
+import { PathCard } from './PathCard';
 
 export default {
     title: 'Components/PathCard',

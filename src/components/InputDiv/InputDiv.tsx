@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 import {string, any, bool, func, number, element, object} from 'prop-types';
 import styles from './stylesheets/inputDiv.module.css';
-import { Input } from "..";
+import { Input } from "../Input/Input";
 import { AiOutlineCheck } from "react-icons/ai";
 import { FcHighPriority } from "react-icons/fc";
 import { useTheme } from "../../hooks";
 
-interface InputDivProps {
+export interface InputDivProps {
     type: React.HTMLInputTypeAttribute
     placeholder?: string
     icon?: JSX.Element | React.ReactNode
@@ -15,9 +15,15 @@ interface InputDivProps {
     regex?: RegExp
     onChange: (e: React.ChangeEvent<HTMLInputElement>)=>{}
     checkLength?: number
+    endIconReplacement?: JSX.Element | React.ReactNode
+    tooltipConfig?: {
+        onCorrect?: string
+        onError?: string
+    }
+    inputArgs?: {}
 }
 
-export const InputDiv = ({type, placeholder, icon, styling, validateInput, regex, onChange, checkLength, ...other}: InputDivProps) => {
+export const InputDiv = ({type, placeholder, icon, styling, validateInput, regex, onChange, checkLength, tooltipConfig={onCorrect: "Correct format", onError: "Incorrect format"}, endIconReplacement, inputArgs, ...other}: InputDivProps) => {
     const [input, setInput] = useState('');
     const [isValid, setValid] = useState(false);
     const theme = useTheme();
@@ -50,9 +56,13 @@ export const InputDiv = ({type, placeholder, icon, styling, validateInput, regex
                 onChange(e);
                 setInput(e.target.value);
                 return e;
-            }} styling={{color: theme?.themeStyles.color}} />
+            }} styling={{color: theme?.themeStyles.color}} {...inputArgs} />
+            {/* <ReactTooltip /> */}
             {
                 input !== '' && validateInput && (isValid ? <AiOutlineCheck color="chartreuse" /> : <FcHighPriority />)
+            }
+            {
+                validateInput == false && endIconReplacement
             }
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PurchaseCard } from '..';
+import { PurchaseCard } from './PurchaseCard';
 
 export default {
     title: 'Components/PurchaseCard',

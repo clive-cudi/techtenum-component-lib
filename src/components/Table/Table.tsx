@@ -7,11 +7,12 @@ interface TableTypes {
   tableConfigCols: [string]
   tableData: [[string]]
   isCollapsible: boolean
-  collapseComponent: JSX.Element | React.ReactNode
-  collapseHeight: string | number
+  collapseComponent?: JSX.Element | React.ReactNode
+  collapseHeight?: string | number
   styling?: React.CSSProperties
   tableStyling?: React.CSSProperties
   tableArgs?: React.HTMLAttributes<HTMLTableElement>
+  tableClassName?: string
 }
 
 
@@ -37,10 +38,10 @@ interface TableTypes {
  */
 
 
-export const Table = ({ tableConfigCols, tableData, isCollapsible, collapseComponent, collapseHeight, styling, tableStyling, tableArgs }: TableTypes): JSX.Element  => {
+export const Table = ({ tableConfigCols, tableData, isCollapsible, collapseComponent, collapseHeight, styling, tableStyling, tableArgs, tableClassName }: TableTypes): JSX.Element  => {
   return (
     <div className={styles.tb_main_wrapper} style={{...styling}}>
-      <table cellSpacing={0} style={{...tableStyling}} {...tableArgs}>
+      <table cellSpacing={0} style={{...tableStyling}} {...tableArgs} className={tableClassName}>
         <thead>
           <tr style={{ background: `#1e293b` }}>
               {tableConfigCols.map((col, index) => {
@@ -55,7 +56,7 @@ export const Table = ({ tableConfigCols, tableData, isCollapsible, collapseCompo
             return (
               <>
                 {/* Table Row */}
-                <TableRow key={index} td_row={row} isCollapsible={isCollapsible} index={index} collapseComponent={collapseComponent} collapseHeight={collapseHeight} />
+                <TableRow key={index} td_row={row} isCollapsible={isCollapsible} index={index} collapseComponent={collapseComponent} collapseHeight={collapseHeight} tableConfigCols={tableConfigCols} />
                 {/* <tr style={{ position: "relative" }}>
                 {row?.map((rowData) => {
                   return (

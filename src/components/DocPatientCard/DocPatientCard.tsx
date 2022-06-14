@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './stylesheets/docPatientCard.module.css';
 import { string, func, oneOf, object } from 'prop-types';
-import { useTheme } from '../..';
+import { useTheme } from '../../hooks';
 
 interface DocPatientCardProps {
     type?: "Doctor" | "Hospital"

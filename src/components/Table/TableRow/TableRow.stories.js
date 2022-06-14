@@ -1,6 +1,5 @@
 import React from 'react';
 import { TableRow } from './TableRow';
-import { Table_data_structure } from '../Table';
 
 export default {
     title: 'Components/TableRow',
@@ -19,11 +18,13 @@ export default {
     ]
 }
 
-const Template = (args) => <TableRow {...args} />
+const Template = (args) => <TableRow {...args} tableConfigCols={["s/n", "Learner", "Date done", "Points", "Percentage"]}  />
 
 export const Default = Template.bind({});
 
 Default.args = {
-    td_row: Table_data_structure[0],
+    td_row: ["1", "James Muhoro", "13-02-2-2021", "12/20", "60%"],
     isCollapsible: true,
+    tableConfigCols: ["s/n", "Learner", "Date done", "Points", "Percentage"],
+    index: 1
 }

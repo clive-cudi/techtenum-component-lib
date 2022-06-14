@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddButton } from '..';
+import { AddButton } from './AddButton';
 
 export default {
     title: 'Components/AddButton',
@@ -13,5 +13,5 @@ export const Default = Template.bind({});
 
 Default.args = {
     label: `Add`,
-    onClick: ()=>{}
+    onClick: (e)=>{}
 }

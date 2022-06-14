@@ -1,6 +1,6 @@
 import { any } from 'prop-types';
 import React from 'react';
-import { SeriesDropDown } from '..';
+import { SeriesDropDown } from './SeriesDropDown';
 
 const seriesData = [
     {

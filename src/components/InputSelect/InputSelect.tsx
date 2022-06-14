@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './stylesheets/inputSelect.module.css';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
-import { useTheme } from '../..';
+import { useTheme } from '../../hooks';
 
 // Add icons to each item in list
 type option = {
@@ -50,13 +50,13 @@ export const InputSelect = ({options, defaultOption, onValue, styling, optionDro
             {isOpen == true &&
                 <div className={styles.is_options_wrapper} style={{...optionDropDownStyling, color: "green"}} >
                     <ul>
-                        {options.map((option)=>{
+                        {options.map((option, index)=>{
                             return (
                                 <li onClick={()=>{
                                     setValue(option.value);
                                     toggleDropDown();
                                     onValue(option.value);
-                                }}><span>{hasIcons && <img src={option.icon} />}</span>{option.label}</li>
+                                }} key={index}><span>{hasIcons && <img src={option.icon} />}</span>{option.label}</li>
                             )
                         })}
                     </ul>

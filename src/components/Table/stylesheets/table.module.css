@@ -23,3 +23,15 @@
     color: white;
     background: #1e293b;
 }
+
+@media (max-width: 400px) {
+    /* .tb_main_wrapper > table {
+        
+    } */
+    .tb_main_wrapper > table > thead {
+        display: none;
+    }
+    .tb_main_wrapper > table > tbody > tr > td {
+        display: block;
+    }
+}

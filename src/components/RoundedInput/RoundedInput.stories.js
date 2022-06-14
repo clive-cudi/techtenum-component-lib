@@ -1,5 +1,5 @@
 import React from 'react';
-import { RoundedInput } from '..';
+import { RoundedInput } from './RoundedInput';
 import { MdOutlineEmail} from 'react-icons/md';
 import { BsKey } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";

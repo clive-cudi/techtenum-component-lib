@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal } from './Modal';
-import { Input } from '..';
+import { Input } from '../Input/Input';
 
 export default {
     title: 'Components/Modal',
