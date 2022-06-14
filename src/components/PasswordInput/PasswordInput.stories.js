@@ -1,6 +1,7 @@
 import React from 'react';
 import { PasswordInput } from './PasswordInput';
 import { RiLockPasswordLine } from 'react-icons/ri';
+import { AiFillEye } from 'react-icons/ai';
 
 export default {
     title: 'Components/PasswordInput',
@@ -16,7 +17,7 @@ Default.args = {
     onChange: (e)=>{},
     inputDivProps: {
         icon: <RiLockPasswordLine />,
-        validateInput: false,
     },
-    // endIconReplacement: {hidePassword: <RiLockPasswordLine />, showPassword: <AiFillEye />}
+    endIconReplacement: {hidePassword: <RiLockPasswordLine />, showPassword: <AiFillEye />},
+    isRounded: true
 }

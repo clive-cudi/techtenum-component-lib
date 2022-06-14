@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { InputDiv, InputDivProps } from "../InputDiv/InputDiv";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
+import { RoundedInput } from '../RoundedInput/RoundedInput';
 
 interface PasswordInputProps {
   onChange: (e?: React.ChangeEvent<HTMLInputElement>) => void;
@@ -12,6 +13,7 @@ interface PasswordInputProps {
       hidePassword: JSX.Element | React.ReactNode;
   }
   showPasswordTrigger?: (showPassword?: boolean)=> {}
+  isRounded?: boolean
 }
 
 export const PasswordInput = ({
@@ -19,7 +21,8 @@ export const PasswordInput = ({
   inputArgs,
   inputDivProps,
   endIconReplacement,
-  showPasswordTrigger
+  showPasswordTrigger,
+  isRounded
 }: PasswordInputProps) => {
   const [showPassword, setShowPassword] = useState(showPasswordTrigger ?? false);
 
@@ -32,16 +35,36 @@ export const PasswordInput = ({
   }
 
   return (
-    <InputDiv
-      type={showPassword ? `text` : `password`}
-      onChange={(e): React.ChangeEvent<HTMLInputElement> => {
-        onChange(e);
-        return e;
-      }}
-      endIconReplacement={showPassword == true ? (endIconReplacement ? <span onClick={()=>{toggleShowPassword()}}>{endIconReplacement.hidePassword}</span> : <AiFillEyeInvisible onClick={()=>{toggleShowPassword()}} />) : (endIconReplacement ? <span onClick={()=>{toggleShowPassword()}}>{endIconReplacement.showPassword}</span> : <AiFillEye onClick={()=>{toggleShowPassword()}} />)}
-      inputArgs={{ ...inputArgs }}
-      icon={<RiLockPasswordLine />}
-      {...inputDivProps}
-    />
-  );
+    <>
+        {
+          isRounded == true ?
+          (<RoundedInput
+              type={showPassword ? `text` : `password`}
+              onChange={(e): React.ChangeEvent<HTMLInputElement> => {
+                onChange(e);
+                return e;
+              }}
+              endIconReplacement={showPassword == true ? (endIconReplacement ? <span onClick={()=>{toggleShowPassword()}}>{endIconReplacement.hidePassword}</span> : <AiFillEyeInvisible onClick={()=>{toggleShowPassword()}} />) : (endIconReplacement ? <span onClick={()=>{toggleShowPassword()}}>{endIconReplacement.showPassword}</span> : <AiFillEye onClick={()=>{toggleShowPassword()}} />)}
+              inputArgs={{ ...inputArgs }}
+              icon={<RiLockPasswordLine />}
+              validateInput={false}
+              {...inputDivProps}
+            />)
+          :
+            (<InputDiv
+              type={showPassword ? `text` : `password`}
+              onChange={(e): React.ChangeEvent<HTMLInputElement> => {
+                onChange(e);
+                return e;
+              }}
+              endIconReplacement={showPassword == true ? (endIconReplacement ? <span onClick={()=>{toggleShowPassword()}}>{endIconReplacement.hidePassword}</span> : <AiFillEyeInvisible onClick={()=>{toggleShowPassword()}} />) : (endIconReplacement ? <span onClick={()=>{toggleShowPassword()}}>{endIconReplacement.showPassword}</span> : <AiFillEye onClick={()=>{toggleShowPassword()}} />)}
+              inputArgs={{ ...inputArgs }}
+              icon={<RiLockPasswordLine />}
+              validateInput={false}
+              tooltipConfig={{onCorrect: "Correct format...", onError: "Incorrect format."}}
+              {...inputDivProps}
+            />)
+        }
+    </> 
+  )
 };

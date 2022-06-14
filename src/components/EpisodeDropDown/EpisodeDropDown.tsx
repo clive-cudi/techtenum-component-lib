@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlinePlayCircle } from 'react-icons/ai';
 import styles from './stylesheets/episodeDropdown.module.css';
-import { useTheme } from '../..';
+import { useTheme } from '../../hooks';
 import { number, string, oneOfType } from 'prop-types';
 
 interface EpisodeDropDownTypes {

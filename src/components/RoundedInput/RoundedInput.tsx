@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {string, any, bool, func, number, element, object} from 'prop-types';
 import styles from './stylesheets/roundedInput.module.css';
-import { useTheme } from '../..';
+import { useTheme } from '../../hooks';
 import { Input } from "..";
 import { AiOutlineCheck } from "react-icons/ai";
 import { FcHighPriority } from "react-icons/fc";
@@ -15,9 +15,11 @@ interface RoundedInputTypes {
     regex?: RegExp
     onChange: (e: React.ChangeEvent<HTMLInputElement>)=>{}
     checkLength?: number
+    endIconReplacement?: JSX.Element | React.ReactNode
+    inputArgs?: {}
 }
 
-export const RoundedInput = ({type, placeholder, icon, styling, validateInput, regex, onChange, checkLength, ...other}: RoundedInputTypes): JSX.Element=> {
+export const RoundedInput = ({type, placeholder, icon, styling, validateInput, regex, onChange, checkLength, endIconReplacement, inputArgs, ...other}: RoundedInputTypes): JSX.Element=> {
     const [input, setInput] = useState('');
     const [isValid, setValid] = useState(false);
     const theme = useTheme();
@@ -50,9 +52,12 @@ export const RoundedInput = ({type, placeholder, icon, styling, validateInput, r
                 onChange(e);
                 setInput(e.target.value);
                 return e;
-            }} styling={{color: theme?.themeStyles.color}} />
+            }} styling={{color: theme?.themeStyles.color}} {...inputArgs} />
             {
                 input !== '' && validateInput && (isValid ? <AiOutlineCheck color="chartreuse" /> : <FcHighPriority />)
+            }
+            {
+                validateInput == false && endIconReplacement
             }
         </div>
     )

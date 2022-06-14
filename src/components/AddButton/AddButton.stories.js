@@ -13,5 +13,5 @@ export const Default = Template.bind({});
 
 Default.args = {
     label: `Add`,
-    onClick: ()=>{}
+    onClick: (e)=>{}
 }

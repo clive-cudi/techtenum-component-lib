@@ -11,7 +11,17 @@ export const useTheme = (): themeTypes | null =>{
     //     setTheme({mode: 'Light'})
     // }
 
-    return theme;
+    if (theme){
+        return theme;
+    }
+
+    return {
+        title: "light",
+        themeStyles: {
+            background: "white",
+            color: "black"
+        }
+    }
 }
 
 // const theme = useTheme();

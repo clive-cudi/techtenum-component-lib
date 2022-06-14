@@ -7,8 +7,8 @@ interface TableTypes {
   tableConfigCols: [string]
   tableData: [[string]]
   isCollapsible: boolean
-  collapseComponent: JSX.Element | React.ReactNode
-  collapseHeight: string | number
+  collapseComponent?: JSX.Element | React.ReactNode
+  collapseHeight?: string | number
   styling?: React.CSSProperties
   tableStyling?: React.CSSProperties
   tableArgs?: React.HTMLAttributes<HTMLTableElement>
