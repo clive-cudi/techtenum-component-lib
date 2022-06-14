@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { InputDiv, InputDivProps } from "../InputDiv/InputDiv";
+import { InputDiv, InputDivProps } from "..";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { RoundedInput } from '../RoundedInput/RoundedInput';
+import { RoundedInput } from '..';
 
 interface PasswordInputProps {
   onChange: (e?: React.ChangeEvent<HTMLInputElement>) => void;

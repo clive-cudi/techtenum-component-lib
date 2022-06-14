@@ -1,10 +1,10 @@
 import { AiOutlineUnorderedList } from 'react-icons/ai';
 import { FiYoutube, FiPlay } from 'react-icons/fi';
 import { BsTrophyFill } from 'react-icons/bs';
-import { Button } from '../Button/Button';
+import { Button } from '..';
 import { bool, string, number, oneOfType } from 'prop-types';
 import styles from './stylesheets/purchaseCard.module.css';
-import { useTheme } from '../../hooks';
+import { useTheme } from '../..';
 
 interface PurchaseCard {
     type: "path" | "module"

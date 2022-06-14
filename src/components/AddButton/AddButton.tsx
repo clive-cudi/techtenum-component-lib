@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 import { string, func } from 'prop-types';
-import { useTheme } from '../../hooks';
+import { useTheme } from '../..';
 import styles from './stylesheets/addbutton.module.css';
 
 interface addButtonProps {

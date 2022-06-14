@@ -2,7 +2,7 @@
 
 export { Button } from './Button/Button';
 export { Input } from './Input/Input';
-export { InputDiv } from './InputDiv/InputDiv';
+export { InputDiv, InputDivProps } from './InputDiv/InputDiv';
 export { Modal } from './Modal/Modal';
 export { PurchaseCard } from './PurchaseCard/PurchaseCard';
 export { PathCard } from './PathCard/PathCard';

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {string, any, bool, func, number, element, object} from 'prop-types';
 import styles from './stylesheets/roundedInput.module.css';
-import { useTheme } from '../../hooks';
+import { useTheme } from '../..';
 import { Input } from "..";
 import { AiOutlineCheck } from "react-icons/ai";
 import { FcHighPriority } from "react-icons/fc";
