@@ -94,14 +94,6 @@ Button.propTypes = {
 }
 ```
 
-I used the prop-types module for typechecking purposes since we aren't using typescript `(this is optional)`
-
-```js
-Button.propTypes = {
-    label: PropTypes.string,
-}
-```
-
 Then create the story for the component in order to configure it for rendering in Storybook;
 
 ```js
